@@ -1,5 +1,6 @@
 <script>
     import UserCard from "./components/UI/UserCard.svelte";
+    import Dropdown from "./UI/Dropdown.svelte";
 
     let persons = [{
         name: 'Maxime',
@@ -15,3 +16,4 @@
 </script>
 
 <UserCard persons={persons} />
+<Dropdown />
