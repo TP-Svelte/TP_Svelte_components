@@ -1,13 +1,17 @@
 <script>
-export let persons = [{}]
+export let persons = []
+let search = "";
+$: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
+
 
 </script>
 <div class="container">
     <div class="filter">
         <img class="icon" src="https://static.thenounproject.com/png/101791-200.png" alt="">
-        <input type="search" placeholder="Search for a user">
+        <input bind:value={search} type="search" placeholder="Search for a user">
+
     </div>
-    {#each persons as person, index}
+    {#each filteredList as person, index}
         <div class="content">
             <img src={person.cover} alt="">
             <p>{person.name}</p>
