@@ -36,7 +36,7 @@
     #checkpoints div{
         display: flex;
         flex-wrap: wrap;
-        width: 500px;
+        width: 450px;
         justify-content: space-between;
         position: relative;
     }
