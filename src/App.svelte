@@ -41,12 +41,12 @@
 
     // validation confirmation
     const supNumberCode = (i) => {
-        if( selectCode[i] < 10 ){
+        if( selectCode[i] < 9 ){
             selectCode[i] ++;
         } 
     }
     const subNumberCode = (i) => {
-        if ( selectCode[i] > 1 ) {
+        if ( selectCode[i] > 0 ) {
             selectCode[i] -= 1;
         }
 
