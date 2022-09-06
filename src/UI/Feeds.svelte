@@ -7,7 +7,7 @@
     const validated_img = "src/assets/validated.svg";
 </script>
 
-<div>
+<div id="checkpoints">
     {#each checkpoints as checkpoint}
         <div>
             {#if checkpoint[1] === "sent"}
@@ -26,5 +26,42 @@
 </div>
 
 <style>
+    #checkpoints{
+        margin: 50px;
+        background-color: #F2F2F2;
+        padding: 50px;
+        border-radius: 24px;
+    }
+
+    #checkpoints div{
+        display: flex;
+        flex-wrap: wrap;
+        width: 500px;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    #checkpoints div:not(:last-child){
+        margin-bottom: 50px;
+    }
+
+    #checkpoints div:not(:last-child):before{ 
+        content: url(src/assets/line.svg) ;
+        position: absolute; 
+        left: 23px;
+        bottom: -45px;
+    }
+
+    #checkpoints img{
+        width: 50px;
+    }
+    
+    #checkpoints p{
+        color: #9F9F9F;
+    }
+        
+    #checkpoints div p:nth-child(2){
+        font-weight: 700;
+    }
 
 </style>
