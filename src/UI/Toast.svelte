@@ -51,13 +51,13 @@
     #hidden_modal{
         display: none;
         z-index: 1;
-        box-shadow: 3px 7px 15px 1px #898989;
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        background: white;
+        background: #F2F2F2;
         padding: 10px 20px;
         width: 300px;
         border-radius: 24px;
+        box-shadow: 3px 7px 15px 1px #898989;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
     }
 </style>
