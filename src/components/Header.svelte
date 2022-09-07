@@ -3,7 +3,7 @@ export let darkMode;
 
 </script>
 
-<div class="container">
+<div class={darkMode ? "container": "container-dark"}>
     <h1>Svelteness</h1>
     <p>Discover this collection of ready-to-use components.<br> Made by Hetic students.</p>
 
