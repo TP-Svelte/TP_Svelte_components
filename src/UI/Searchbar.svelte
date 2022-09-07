@@ -5,7 +5,7 @@ let isDataValid = false;
 
 const search  = async () => {
     isInputEmpty();
-    
+
     if (!isDataValid){
         data = '';
         const response = await fetch('https://api-adresse.data.gouv.fr/search/?q=' + input )
