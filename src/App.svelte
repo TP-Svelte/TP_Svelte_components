@@ -1,6 +1,6 @@
 <script>
-    import InputNumber from "./InputNumber.svelte";
-    import Steps from "./Steps.svelte";
+    import InputNumber from "./UI/InputNumber.svelte";
+    import Steps from "./UI/Steps.svelte";
     import UserCard from "./UI/UserCard.svelte";
     import Dropdown from "./UI/Dropdown.svelte";
     import Feeds from "./UI/Feeds.svelte";
