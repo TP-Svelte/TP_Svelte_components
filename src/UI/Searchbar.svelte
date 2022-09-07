@@ -1,49 +1,30 @@
 <script>
 let input = '';
 let data = ''
-let isDataValid = false;
 
 const search  = async () => {
-    isInputEmpty();
-
-    if (!isDataValid){
-        data = '';
-        const response = await fetch('https://api-adresse.data.gouv.fr/search/?q=' + input )
-        data = await response.json()
-    }
-}
-
-const isInputEmpty = () => {
-    if (input == '' && isDataValid){
-        return isDataValid = false;
-    }
-
+    data = '';
+    const response = await fetch('https://api-adresse.data.gouv.fr/search/?q=' + input )
+    data = await response.json()
 }
 
 const updateInput = (key) => {
     input = data.features[key].properties.label
     data = '';
-    isDataValid = true;
 }
 
 const resetInput = () => {
     input = '';
     data = '';
 }
-
-function debounce(func, timeout = 300){
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => { func.apply(this, args); }, timeout);
-  };
-}
 </script>
 
 
 <div class='container'>
     <div>
+
     <input type="text" placeholder="Address" class:is-active={isDataValid} bind:value={input} on:input={debounce(() => search())}/> 
+
     <div id='deleteBtn' on:click={resetInput}></div>
     
     {#if data}
@@ -84,10 +65,6 @@ input {
 
 input:focus{
     outline: none;
-}
-
-input.is-active {
-    border: 2px solid #7DCBA4;
 }
 
 li {

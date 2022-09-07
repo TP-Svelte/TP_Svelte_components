@@ -41,7 +41,7 @@ import StarRating from 'svelte-star-rating';
 
     width: 60vw;
     height: auto;
-    background-color: #141316;
+    background-color: #001014;
     padding: 2em;
     border-radius: 24px;
     text-align: left;
@@ -70,6 +70,6 @@ h3 {
     color: #191919;
 }
 .title-dark {
-    color: #BCBCBC;
+    color: #E6FCF3;
 }
 </style>
