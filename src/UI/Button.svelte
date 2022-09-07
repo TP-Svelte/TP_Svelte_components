@@ -9,8 +9,8 @@
 
 <style>
     .button-light {
-        background-color: #DBEBE3;
-        color: #929098;
+        background-color: rgba(0,220,130,1);
+        color: black;
         transition: 0.4s all ease-in-out;
     }
     .button-dark {

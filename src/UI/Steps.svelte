@@ -1,4 +1,7 @@
 <script>
+import Button from "./Button.svelte";
+
+    export let darkMode;
 // variables
     let step = 1;
     let imgs = ["src/assets/loading.svg", "src/assets/validated_dark.svg"];
@@ -16,106 +19,133 @@
     }
 </script>
 
-<section class="steps">
-    <!-- step1 -->
-    {#if step === 1}
-    <div class="step load">
-        <div class="line"></div>
-        <span>
-            <img src={imgs[0]} alt="Mon image" width="20px">
-        </span>
-        <span>
-            Step 1
-        </span>
-    </div>
-    {:else}
-    <div class="step good">
-        <div class="line"></div>
-        <span>
-            <img src={imgs[1]} alt="Mon image" width="20px">
-        </span>
-        <span>
-            Step 1
-        </span>
-    </div>
-    {/if}
+<section class={darkMode ? 'steps-light' : 'steps-dark'}>
+    <div class="steps">
+        <!-- step1 -->
+        {#if step === 1}
+        <div class="step load">
+            <div class="line"></div>
+            <span>
+                <img src={imgs[0]} alt="Mon image" width="20px">
+            </span>
+            <span>
+                Step 1
+            </span>
+        </div>
+        {:else}
+        <div class="step good">
+            <div class="line"></div>
+            <span>
+                <img src={imgs[1]} alt="Mon image" width="20px">
+            </span>
+            <span>
+                Step 1
+            </span>
+        </div>
+        {/if}
 
-<!-- step 2 -->
-    {#if step < 2}
+    <!-- step 2 -->
+        {#if step < 2}
+            <div class="step">
+                    <div class="line"></div>
+                    <p>
+                        Step 2
+                    </p>
+            </div>
+
+        {:else if step === 2}
+        <div class="step load">
+            <div class="line"></div>
+            <span>
+                <img src={imgs[0]} alt="Mon image" width="20px">
+            </span>
+            <span>
+                Step 2
+            </span>
+        </div>
+        {:else}
+        <div class="step good">
+            <div class="line"></div>
+            <span>
+                <img src={imgs[1]} alt="Mon image" width="20px">
+            </span>
+            <span>
+                Step 2
+            </span>
+        </div>
+        {/if}
+
+    <!-- step 3 -->
+
+        {#if step < 3}
         <div class="step">
-                <div class="line"></div>
-                <p>
-                    Step 2
-                </p>
+            <div class="line"></div>
+            <span>
+                Step 3
+            </span>
         </div>
 
-    {:else if step === 2}
-    <div class="step load">
-        <div class="line"></div>
-        <span>
-            <img src={imgs[0]} alt="Mon image" width="20px">
-        </span>
-        <span>
-            Step 2
-        </span>
-    </div>
-    {:else}
-    <div class="step good">
-        <div class="line"></div>
-        <span>
-            <img src={imgs[1]} alt="Mon image" width="20px">
-        </span>
-        <span>
-            Step 2
-        </span>
-    </div>
-    {/if}
+        {:else if step === 3}
+        <div class="step load">
+            <div class="line"></div>
+            <span>
+                <img src={imgs[0]} alt="Mon image" width="20px">
+            </span>
+            <span>
+                Step 3
+            </span>
+        </div>
 
-<!-- step 3 -->
-
-    {#if step < 3}
-    <div class="step">
-        <div class="line"></div>
-        <span>
-            Step 3
-        </span>
+        {:else}
+        <div class="step good">
+            <div class="line"></div>
+            <span>
+                <img src={imgs[1]} alt="Mon image" width="20px">
+            </span>
+            <span>
+                Step 3
+            </span>
+        </div>
+        {/if}
     </div>
-        
-    {:else if step === 3}
-    <div class="step load">
-        <div class="line"></div>
-        <span>
-            <img src={imgs[0]} alt="Mon image" width="20px">
-        </span>
-        <span>
-            Step 3
-        </span>
+    <div class="buttons">
+        <Button darkMode={darkMode} on:click={ backStep }>
+            Etape précédente
+        </Button> 
+        <Button darkMode={darkMode} on:click={ nextStep }>
+            Etape suivante
+        </Button> 
     </div>
-
-    {:else}
-    <div class="step good">
-        <div class="line"></div>
-        <span>
-            <img src={imgs[1]} alt="Mon image" width="20px">
-        </span>
-        <span>
-            Step 3
-        </span>
-    </div>
-    {/if}
 </section>
-<section class="buttons">
-    <button on:click={ backStep }>
-        Etape précédente
-    </button> 
-    <button on:click={ nextStep }>
-        Etape suivante
-    </button> 
-</section>
-{step}
+
+<!--
+        <div on:click={ backStep }>
+            <Button darkMode={darkMode}>
+                Etape précédente
+            </Button> 
+        </div>
+        <div on:click={ nextStep }>
+            <Button darkMode={darkMode}>
+                Etape suivante
+            </Button> 
+        </div>
+-->
 
 
 <style>
+    section{
+        border-radius: 24px;
+        padding: 20px;
+    }
+
+    .steps-light{
+        background-color: #F2F2F2;;
+    }
+
+    .steps-dark{
+        background-color: #141316;
+    }
+
     .steps{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -130,21 +160,7 @@
         justify-content: center;
         width: 100%;
         margin-top: 10%;
-        color: #9F9F9F
-    }
-
-    button {
-        border-radius: 8px;
-        border: 1px solid transparent;
-        padding: 0.6em 1.2em;
-        margin: 3%;
-        font-size: 1em;
-        font-weight: 500;
-        font-family: inherit;
-        background-color: #DBEBE3;
-        cursor: pointer;
-        transition: border-color 0.25s;
-        color: #929098;
+        column-gap: 10px;
     }
 
     .line{

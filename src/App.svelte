@@ -155,13 +155,30 @@
     </div>
 </div>
 
-
-<!-- <Reviews darkMode={true} reviewsInfo={reviewsInfo}></Reviews>  -->
-
+<div class="flex">
+    <div class="hover-ui">
+        <Steps darkMode={darkMode}/> 
+    </div>
+    <div class={darkMode ?  'doc' : 'doc-dark'}>
+        <h2>Steps</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+    </div>
 </div>
 
-<Steps/> 
-<InputNumber/> 
+<div class="flex">
+    <div class="hover-ui">
+        <InputNumber darkMode={darkMode}/>  
+    </div>
+    <div class={darkMode ?  'doc' : 'doc-dark'}>
+        <h2>InputNumber</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+    </div>
+</div>
+
+<!-- <Reviews darkMode={true} reviewsInfo={reviewsInfo}></Reviews>  -->
+<br>
+<br>
+</div>
 
 
 <div on:click={toggleMode}>
@@ -173,6 +190,8 @@
         {/if}
     </Button>
 </div>
+<br>
+<br>
 
 <style>
 

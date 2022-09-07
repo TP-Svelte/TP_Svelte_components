@@ -1,4 +1,5 @@
 <script>
+    export let darkMode;
     // variables
         let number = 1;
         let numberValidate = false;
@@ -62,7 +63,7 @@
     
     </script>
     
-    
+    <section class={darkMode ? 'inputNumber-light' : 'inputNumber-dark'}>
     {#if numberValidate === false}
         <p>Choisissez le nombre de case de code de vérification</p>
     
@@ -80,8 +81,7 @@
             Valider
         </button>
     {/if}
-    
-    
+       
     {#if numberValidate === true && codeValidate === false }
     
         <p>Chiffre / nombre retenu : { number }</p>
@@ -124,20 +124,26 @@
         </button>
     {/if}
     
-    
-
-    
     {#if codeValidate === true}
         <p>Félicitations, le code a bien été validé !</p>
     {/if}
+
+    </section>
     
     <style>
 
+        section{
+            border-radius: 24px;
+            padding: 20px;
+        }
 
+        .inputNumber-light{
+            background-color: #F2F2F2;;
+        }
 
-
-
-
+        .inputNumber-dark{
+            background-color: #141316;
+        }
 
     /* Retrait flèches input */
 
