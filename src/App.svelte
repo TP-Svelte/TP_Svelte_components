@@ -1,6 +1,6 @@
 <script>
 
-    import UserCard from "./components/UI/UserCard.svelte";
+    import UserCard from "./UI/UserCard.svelte";
     import Dropdown from "./UI/Dropdown.svelte";
     import Feeds from "./UI/Feeds.svelte";
     import Toast from "./UI/Toast.svelte";

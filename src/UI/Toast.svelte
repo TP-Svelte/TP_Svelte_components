@@ -1,7 +1,7 @@
 <script>
     const deploy = () => {
         document.getElementById("hidden_modal").style.display = "block";
-        //setTimeout("document.getElementById('hidden_modal').style.display = 'none'",3000);
+        setTimeout("document.getElementById('hidden_modal').style.display = 'none'",3000);
     }
 </script>
 
