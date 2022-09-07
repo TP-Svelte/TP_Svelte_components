@@ -4,14 +4,25 @@ let data = ''
 let isDataValid = false;
 
 const search  = async () => {
-    data = '';
-    const response = await fetch('https://api-adresse.data.gouv.fr/search/?q=' + input )
-    data = await response.json()
-}
+     isInputEmpty();
+
+     if (!isDataValid){
+         data = '';
+         const response = await fetch('https://api-adresse.data.gouv.fr/search/?q=' + input )
+         data = await response.json()
+     }
+ }
+
+ const isInputEmpty = () => {
+     if (input == '' && isDataValid){
+         return isDataValid = false;
+     }
+ }
 
 const updateInput = (key) => {
     input = data.features[key].properties.label
     data = '';
+    isDataValid = true;
 }
 
 const resetInput = () => {
@@ -75,6 +86,10 @@ input {
 input:focus{
     outline: none;
 }
+
+input.is-active {
+     border: 2px solid #7DCBA4;
+ }
 
 li {
     padding-left: 20px;
