@@ -63,11 +63,10 @@
 
 
 
-<!--<Steps/> -->
-<!--<InputNumber/> -->
+<Steps/> 
+<InputNumber/> 
 
 
-<style>
 <div class="container">
 <Header darkMode={darkMode} />
 <div on:click={toggleMode}>
