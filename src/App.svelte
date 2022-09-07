@@ -1,4 +1,5 @@
 <script>
+
     import UserCard from "./components/UI/UserCard.svelte";
     import Dropdown from "./UI/Dropdown.svelte";
 
@@ -17,3 +18,4 @@
 
 <UserCard persons={persons} />
 <Dropdown />
+
