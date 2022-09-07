@@ -112,6 +112,9 @@
         {/each}
         </div>
     
+        <div>
+            Code : 
+        </div>
         <button on:click={ validateCode }>
             Valider
         </button>
