@@ -26,8 +26,6 @@
     openDropdown = !openDropdown
   };
 
-  let elementSelected='';
-
   function selected() {
     var liElems = document.querySelectorAll('ul > li');
     liElems.forEach(function(elem) {
@@ -44,6 +42,7 @@
     }
   };
 </script>
+
 <div id="Dropdown">
   <button on:click={ toggle } aria-expanded={ openDropdown } class={darkMode ? 'dropdown-light' : 'dropdown-dark'}>
       <div id="ellipse_btn" style:background-color={EllipseColor}>
@@ -106,7 +105,6 @@
   #ellipse_btn > img {
     max-width: 24px;
   }
-
   #ellipse_list {
     width: 5px;
     height: 5px;
@@ -119,11 +117,9 @@
     height: 20px;
     transition: transform 0.2s ease-in;
   }
-
   [aria-expanded=true] #arrow {
     transform: rotate(0.25turn);
   }
-
   #dropdown_items {
     border-radius: 20px;
     display: table;
@@ -156,5 +152,4 @@
   .active.hidden{
     font-weight: 400;
   }
-
 </style>

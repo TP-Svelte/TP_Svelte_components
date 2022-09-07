@@ -149,7 +149,7 @@
     </div>
 </div>
 
-<div class="flex">
+<div class="navbar">
     <div class="hover-ui">
         <Navbar darkMode={darkMode}/>
     </div>
@@ -306,4 +306,11 @@
     cursor: pointer;
 
 }
+.navbar {
+  padding: 30px;
+}
+.navbar > .hover-ui {
+  padding:50px 50px 50px 0;
+}
 </style>
+
