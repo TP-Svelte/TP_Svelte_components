@@ -4,6 +4,7 @@
     import Dropdown from "./UI/Dropdown.svelte";
     import Feeds from "./UI/Feeds.svelte";
     import Toast from "./UI/Toast.svelte";
+    import Searchbar from "./UI/Searchbar.svelte";
 
     let persons = [{
         name: 'Maxime',
@@ -62,3 +63,6 @@
 
 <h2>Dropdown</h2>
 <Dropdown />
+
+<h2>Adress Searchbar</h2>
+<Searchbar></Searchbar>

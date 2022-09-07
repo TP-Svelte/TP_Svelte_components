@@ -59,7 +59,6 @@ input {
     border-radius: 15px;
     background-color: white;
     border: none;
-    font-family: 'Inter';
     font-weight: 400;
     font-size: 18px;
     color: #9F9F9F;
@@ -75,7 +74,6 @@ li {
     
     cursor: pointer;
     list-style: none;
-    font-family: 'Inter';
     font-weight: 400;
     font-size: 16px;
     background-color: white;
