@@ -20,11 +20,9 @@ let selectedItemIsTitle = false;
 let showSelectedItem = false; 
 
 let openDropdown = false; 
-let ariaExpanded = false; 
 
 const toggle = () => {
   openDropdown = !openDropdown
-  ariaExpanded = !ariaExpanded
 };
 
 let elementSelected='';
@@ -50,7 +48,7 @@ function selected() {
 
 </script>
 
-<button on:click={ toggle } aria-expanded={ ariaExpanded }>
+<button on:click={ toggle } aria-expanded={ openDropdown }>
     <img id="ellipse_btn" src={ Ellipse1 } alt="">
     <span>{ dropdownTitle }</span>
     <img id="arrow" src={ Arrow } alt="">
@@ -59,7 +57,7 @@ function selected() {
 {#if openDropdown === true}
 <div id="dropdown_items">
     <ul>
-        {#each dropdownItems as dropdownItem }
+        {#each dropdownItems as dropdownItem}
 
         <li class="active hidden" on:click={ selected }>
             <img class="ellipses" src={ Ellipse1 } alt="">
