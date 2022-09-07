@@ -1,6 +1,7 @@
 <script>
 let input = '';
 let data = ''
+let isDataValid = false;
 
 const search  = async () => {
     data = '';
@@ -17,6 +18,14 @@ const resetInput = () => {
     input = '';
     data = '';
 }
+
+function debounce(func, timeout = 300){
+   let timer;
+   return (...args) => {
+     clearTimeout(timer);
+     timer = setTimeout(() => { func.apply(this, args); }, timeout);
+   };
+ }
 </script>
 
 
