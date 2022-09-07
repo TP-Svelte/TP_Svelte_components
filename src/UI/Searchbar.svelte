@@ -43,7 +43,7 @@ function debounce(func, timeout = 300){
 
 <div class='container'>
     <div>
-    <input type="text" placeholder="Adresse" class:is-active={isDataValid} bind:value={input} on:input={debounce(() => search())}/> 
+    <input type="text" placeholder="Address" class:is-active={isDataValid} bind:value={input} on:input={debounce(() => search())}/> 
     <div id='deleteBtn' on:click={resetInput}></div>
     
     {#if data}
