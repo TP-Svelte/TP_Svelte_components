@@ -1,7 +1,7 @@
 <script>
     const deploy = () => {
         document.getElementById("hidden_modal").style.display = "block";
-        setTimeout("document.getElementById('hidden_modal').style.display = 'none'",3000);
+        //setTimeout("document.getElementById('hidden_modal').style.display = 'none'",3000);
     }
 </script>
 
@@ -24,13 +24,13 @@
     }
 
     #Toast h3{
-        color: #DBEBE3;
+        color: #7DCBA4;
         margin-left: 20px;
         margin-top: 0;
     }
 
     #Toast h3::before{
-        content: url(src/assets/validated.svg);
+        content: url(src/assets/validated_dark.svg);
         width: 20%;
         height: 20px;
         display: block;
@@ -46,6 +46,7 @@
 
     #Toast button{
         background-color: #DBEBE3;
+        color: #929098;
     }
 
     #hidden_modal{

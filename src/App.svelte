@@ -13,6 +13,12 @@
 
 <h1>Nos composants</h1>
 <h2>Toast</h2>
+<!-- 
+    Pour créer son Toast : 
+      - mettre le nom du bouton dans le <span slot="button">
+      - mettre le titre de la modale qui apparait au clic dans <span slot="modal_title">
+      - mettre le texte de la modale qui apparait au clic dans <span slot="modal_text">  
+-->
 <Toast>
 	<span slot="button">
 		Ajouter à l'agenda
@@ -26,5 +32,11 @@
 		Vous pouvez retrouver cet évènement dans votre agenda
 	</span>
 </Toast>
+
 <h2>Feeds</h2>
+<!-- 
+    Pour créer ses Feeds : 
+    donner ses valeurs dans la variable checkpoints_list sous le format [ "text", "status", "date" ].
+    Les status disponsibles sont : sent, loading, closed, validated.
+-->
 <Feeds checkpoints={checkpoints_list} />
