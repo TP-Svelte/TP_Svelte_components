@@ -1,4 +1,5 @@
 <script>
+    import Button from "./Button.svelte";
     export let darkMode;
     // variables
         let number = 1;
@@ -68,18 +69,20 @@
         <p>Choisissez le nombre de case de code de vérification</p>
     
         <div>
-            <button on:click={ subNumber }>
+            <button class={darkMode ? 'button-dark' : 'button-light'} on:click={ subNumber }>
                 -
             </button>
             <input type="number" bind:value="{number}" id="">
-            <button on:click={ supNumber }>
+            <button class={darkMode ? 'button-dark' : 'button-light'} on:click={ supNumber }>
                 +
             </button>
             
         </div>
-        <button on:click={ validateChoiceNumber }>
-            Valider
-        </button>
+        <div on:click={ validateChoiceNumber }>
+            <Button darkMode={darkMode}>
+                Valider
+            </Button>
+        </div>
     {/if}
        
     {#if numberValidate === true && codeValidate === false }
@@ -89,7 +92,7 @@
         {#each Array(number) as _, i}
             <div class="chiffre">
                 
-                <button on:click={ 
+                <button class={darkMode ? 'button-dark' : 'button-light'} on:click={ 
                     (() => {
                         subNumberCode(i);
                     })
@@ -101,7 +104,7 @@
                     <input type="number" value={selectCode[i]}>
                 </span>
 
-                <button on:click={ 
+                <button class={darkMode ? 'button-dark' : 'button-light'} on:click={ 
                      (() => {
                         supNumberCode(i);
                         })
@@ -112,16 +115,23 @@
         {/each}
         </div>
     
-        <div>
+        <div class="display_validation">
+            <br>
             Code : 
+            <br>
+            <br>
+            <div on:click={ validateCode }>
+                <Button darkMode={darkMode}>
+                    Valider
+                </Button>
+            </div>
+            
+            <div on:click={ disableValidateChoiceNumber }>
+                <Button darkMode={darkMode}>
+                    Retour en arrière
+                </Button>
+            </div>
         </div>
-        <button on:click={ validateCode }>
-            Valider
-        </button>
-    
-        <button on:click={ disableValidateChoiceNumber }>
-            Retour en arrière
-        </button>
     {/if}
     
     {#if codeValidate === true}
@@ -143,6 +153,28 @@
 
         .inputNumber-dark{
             background-color: #141316;
+        }
+
+        .display_validation div{
+            display: inline-block;
+        }
+
+        .button-light {
+            background-color: rgba(0,220,130,1);
+            color: black;
+            transition: 0.4s all ease-in-out;
+            margin: 5px;
+        }
+    
+        .button-dark {
+            background-color: #00181E;
+            color: #E6FCF3;
+            transition: 0.3s all ease-in-out;
+            margin: 5px;
+        }
+
+        .chiffre{
+            margin-bottom: 10px;
         }
 
     /* Retrait flèches input */

@@ -109,12 +109,16 @@ import Button from "./Button.svelte";
         {/if}
     </div>
     <div class="buttons">
-        <Button darkMode={darkMode} on:click={ backStep }>
-            Etape précédente
-        </Button> 
-        <Button darkMode={darkMode} on:click={ nextStep }>
-            Etape suivante
-        </Button> 
+        <div on:click={ backStep }>
+            <Button darkMode={darkMode}>
+                Etape précédente
+            </Button> 
+        </div>
+        <div on:click={ nextStep }>
+            <Button darkMode={darkMode}>
+                Etape suivante
+            </Button> 
+        </div>
     </div>
 </section>
 
