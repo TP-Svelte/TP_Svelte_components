@@ -173,10 +173,7 @@
 
 .container {
     margin-top: 5em;
-
-
 }
-
     .flex {
         display: flex;
         /* width: 100vw; */
