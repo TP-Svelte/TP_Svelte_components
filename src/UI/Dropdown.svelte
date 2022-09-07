@@ -1,76 +1,81 @@
 <script>
+  export let darkMode;
+  import Arrow from '/src/assets/arrow.svg';
 
-import Arrow from '/src/assets/arrow.svg';
+  //// Éléments modifiables 
+  // Titre Dropdown
+  export let dropdownTitle = 'Dropdown button';
+  // Items Dropdown
+  export let dropdownItems = [
+    { item: 'Option A' },
+    { item: 'Option B' },
+    { item: 'Option C' }
+  ];
+  //Couleur ellipse Dropdown
+  export let EllipseColor = '#C6E0D7';
+  // Image ellipse Dropdown
+  export let EllipseImg = '/src/assets/list.svg';
+  //Fermeture automatique du Dropdown
+  export let automaticClose = false; 
+  //Item Selectionné devient titre du Dropdown
+  export let selectedItemIsTitle = true; 
 
-//// Éléments modifiables 
-// Titre Dropdown
-export let dropdownTitle = 'Dropdown button';
-// Items Dropdown
-export let dropdownItems = [
-  { item: 'Option A' },
-  { item: 'Option B' },
-  { item: 'Option C' }
-];
-//Couleur ellipse Dropdown
-export let EllipseColor = '#C6E0D7';
-// Image ellipse Dropdown
-export let EllipseImg = '/src/assets/list.svg';
-//Fermeture automatique du Dropdown
-export let automaticClose = false; 
-//Item Selectionné devient titre du Dropdown
-export let selectedItemIsTitle = true; 
+  let openDropdown = false; 
 
-let openDropdown = false; 
+  const toggle = () => {
+    openDropdown = !openDropdown
+  };
 
-const toggle = () => {
-  openDropdown = !openDropdown
-};
+  let elementSelected='';
 
-let elementSelected='';
-
-function selected() {
-  var liElems = document.querySelectorAll('ul > li');
-  liElems.forEach(function(elem) {
-    elem.classList.remove('active');
-    elem.classList.remove('hidden');
-  });
-  this.classList.add('active');
-  const activeItems = document.querySelector('.active p').innerHTML;
-  if (selectedItemIsTitle) {
-    dropdownTitle = activeItems;
-  }
-  if (automaticClose) {
-    toggle()
-  }
-};
-
+  function selected() {
+    var liElems = document.querySelectorAll('ul > li');
+    liElems.forEach(function(elem) {
+      elem.classList.remove('active');
+      elem.classList.remove('hidden');
+    });
+    this.classList.add('active');
+    const activeItems = document.querySelector('.active p').innerHTML;
+    if (selectedItemIsTitle) {
+      dropdownTitle = activeItems;
+    }
+    if (automaticClose) {
+      toggle()
+    }
+  };
 </script>
+<div id="Dropdown">
+  <button on:click={ toggle } aria-expanded={ openDropdown } class={darkMode ? 'dropdown-light' : 'dropdown-dark'}>
+      <div id="ellipse_btn" style:background-color={EllipseColor}>
+        <img src="{ EllipseImg }" alt="list icon">
+      </div>
+      <span>{ dropdownTitle }</span>
+      <img id="arrow" src={ Arrow } alt="">
+  </button>
 
-<button on:click={ toggle } aria-expanded={ openDropdown }>
-    <div id="ellipse_btn" style:background-color={EllipseColor}>
-      <img src="{ EllipseImg }" alt="list icon">
-    </div>
-    <span>{ dropdownTitle }</span>
-    <img id="arrow" src={ Arrow } alt="">
-</button>
+  {#if openDropdown === true}
+  <div id="dropdown_items" class={darkMode ? 'dropdown-light' : 'dropdown-dark'}>
+      <ul>
+          {#each dropdownItems as dropdownItem}
 
-{#if openDropdown === true}
-<div id="dropdown_items">
-    <ul>
-        {#each dropdownItems as dropdownItem}
-
-        <li class="active hidden" on:click={ selected }>
-            <div id="ellipse_list" style:background-color={EllipseColor}></div>
-            <p>{ dropdownItem.item } </p>
-        </li>
-        {/each}
-    </ul>
+          <li class="active hidden" on:click={ selected }>
+              <div id="ellipse_list" style:background-color={EllipseColor}></div>
+              <p>{ dropdownItem.item } </p>
+          </li>
+          {/each}
+      </ul>
+  </div>
+  {/if}
 </div>
-{/if}
 
 <style>
-  button {
+  .dropdown-dark {
+    background-color: #001014;
+  }
+  .dropdown-light {
     background-color: #F2F2F2;
+  }
+  button {
     border-radius: 50px;
     display: flex;
     padding: 10px 22px 10px 14px;
@@ -120,7 +125,6 @@ function selected() {
   }
 
   #dropdown_items {
-    background-color: #F2F2F2;
     border-radius: 20px;
     display: table;
     min-width: 200px;
