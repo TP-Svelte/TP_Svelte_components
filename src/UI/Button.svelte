@@ -1,16 +1,9 @@
 <script>
     export let darkMode;
-
-
-
 </script>
 
 <button  class={darkMode ?  'button-dark' : 'button-light'}>            
-    {#if darkMode == true}
-    Dark mode
-    {:else}
-    Light mode
-    {/if}
+    <slot/>
 </button>
 
 

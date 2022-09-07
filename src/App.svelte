@@ -23,11 +23,11 @@
     
       
     let checkpoints_list = [
-      [ "Dossier envoyé", "sent", "2 sept" ],
-      [ "Dossier en cours de traitement", "loading", "2 sept" ],
-      [ "Dossier refusé", "closed", "5 sept" ],
-      [ "Dossier en cours de réévaluation", "loading", "6 sept"],
-      [ "Dossier accepté", "validated", "15 sept" ]    
+      [ "Case submitted", "sent", "2 sept" ],
+      [ "Case being processed", "loading", "2 sept" ],
+      [ "Case refused", "closed", "5 sept" ],
+      [ "Case under reassessment", "loading", "6 sept"],
+      [ "Case accepted", "validated", "15 sept" ]    
     ];
 
     // REVIEWS
@@ -50,48 +50,53 @@
 <!-- <div class="container"> -->
 <Header />
 <div on:click={toggleMode}>
-    <Button darkMode={darkMode} />
+    <Button darkMode={darkMode}>
+        {#if darkMode == true}
+            Dark mode
+        {:else}
+            Light mode
+        {/if}
+    </Button>
 </div>
 <div class="flex">
     <div>
-        <!-- 
-            Pour créer son Toast : 
-            - mettre le nom du bouton dans le <span slot="button">
-            - mettre le titre de la modale qui apparait au clic dans <span slot="modal_title">
-            - mettre le texte de la modale qui apparait au clic dans <span slot="modal_text">  
-        -->
-        <Toast>
+        <Toast darkMode={darkMode}>
             <span slot="button">
-                Ajouter à l'agenda
+                Add to calendar
             </span>
 
             <span slot="modal_title">
-                Evènement ajouté
+                Event added
             </span>
 
             <span slot="modal_text">
-                Vous pouvez retrouver cet évènement dans votre agenda
+                Now, you can find this event in your calendar.
             </span>
         </Toast>
     </div>
     <div class="doc">
         <h2>Toast</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+        <p> La création d'un toast passe par des slots. <br>
+            Pour créer son Toast : 
+            <li>passer le nom du bouton souhaité dans le span slot="button"</li>
+            <li>passer le titre de la modale qui apparait au clic dans le span slot="modal_title"</li>
+            <li>passer le texte de la modale qui apparait au clic dans le span slot="modal_text"</li>
+        </p>
 
     </div>
 </div>
 <div class="flex">
     <div>
-        <!-- 
-            Pour créer ses Feeds : 
-            donner ses valeurs dans la variable checkpoints_list sous le format [ "text", "status", "date" ].
-            Les status disponsibles sont : sent, loading, closed, validated.
-        -->
-        <Feeds checkpoints={checkpoints_list} />
+        <Feeds darkMode={darkMode} checkpoints={checkpoints_list} />
     </div>
     <div class="doc">
         <h2>Feeds</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+        <p>
+            Pour créer ses Feeds : 
+            passer ses valeurs en array dans la variable checkpoints_list sous le format [ "text", "status", "date" ].
+            <br>Les status disponsibles sont : sent, loading, closed, validated.
+            <br>Chaque status est lié à une icône. 
+        </p>
     </div>
 </div>
 
@@ -139,7 +144,13 @@
 <!-- </div> -->
 
 <div on:click={toggleMode}>
-    <Button darkMode={darkMode} />
+    <Button darkMode={darkMode}>
+        {#if darkMode == true}
+            Dark mode
+        {:else}
+            Light mode
+        {/if}
+    </Button>
 </div>
 
 <style>

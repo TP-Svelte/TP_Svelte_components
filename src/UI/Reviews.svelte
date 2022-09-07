@@ -57,7 +57,7 @@ import StarRating from 'svelte-star-rating';
     justify-content: space-between;
     align-content: center;
     align-items: center;
-    color: #BCBCBC;
+    color: #9F9F9F;
 }
 
 .content-review {
