@@ -28,6 +28,8 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
     background-color: #F2F2F2;
     padding: 2em;
     border-radius: 24px;
+    transition: 0.3s all ease-in-out;
+
 }
 .container-dark {
     margin: 2em;
@@ -35,6 +37,8 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
     background-color: #141316;
     padding: 2em;
     border-radius: 24px;
+    transition: 0.3s all ease-in-out;
+
 }
 
 .content {
@@ -59,6 +63,8 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
         padding-left: 25px;
         text-indent: 40px;
         color:#27262D ;
+        transition: 0.3s all ease-in-out;
+
 }
 .input-dark {
         width: 100%;
@@ -69,6 +75,7 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
         border: 0px;
         padding-left: 25px;
         text-indent: 40px;
+        transition: 0.3s all ease-in-out;
 
 }
 

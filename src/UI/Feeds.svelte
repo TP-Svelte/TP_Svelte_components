@@ -27,7 +27,7 @@
 
 <style>
     #Feeds{
-        margin: 50px;
+        /* margin: 50px; */
         background-color: #F2F2F2;
         padding: 50px;
         border-radius: 24px;

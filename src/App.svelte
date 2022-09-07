@@ -7,7 +7,7 @@
     import Searchbar from "./UI/Searchbar.svelte";
     import Button from "./UI/Button.svelte";
     import Reviews from "./UI/Reviews.svelte"
-    
+    import Header from "./components/Header.svelte"
 
     let persons = [{
         name: 'Maxime',
@@ -38,51 +38,151 @@
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nemo aperiam, eveniet omnis, delectus magni re",
         stars: 5
     }]
+
+    let darkMode = true
+    const toggleMode = () => {
+        darkMode = !darkMode
+    }
 </script>
 
-<h1>Nos composants</h1>
-<h2>Toast</h2>
-<!-- 
-    Pour créer son Toast : 
-      - mettre le nom du bouton dans le <span slot="button">
-      - mettre le titre de la modale qui apparait au clic dans <span slot="modal_title">
-      - mettre le texte de la modale qui apparait au clic dans <span slot="modal_text">  
--->
-<Toast>
-	<span slot="button">
-		Ajouter à l'agenda
-	</span>
-
-	<span slot="modal_title">
-        Evènement ajouté
-	</span>
-
-    <span slot="modal_text">
-		Vous pouvez retrouver cet évènement dans votre agenda
-	</span>
-</Toast>
-
-<h2>Feeds</h2>
-<!-- 
-    Pour créer ses Feeds : 
-    donner ses valeurs dans la variable checkpoints_list sous le format [ "text", "status", "date" ].
-    Les status disponsibles sont : sent, loading, closed, validated.
--->
-<Feeds checkpoints={checkpoints_list} />
 
 
-<h2>Dropdown</h2>
-<Dropdown />
+<!-- <div class="container"> -->
+<Header />
+<div on:click={toggleMode}>
+    <Button darkMode={darkMode} />
+</div>
+<div class="flex">
+    <div>
+        <!-- 
+            Pour créer son Toast : 
+            - mettre le nom du bouton dans le <span slot="button">
+            - mettre le titre de la modale qui apparait au clic dans <span slot="modal_title">
+            - mettre le texte de la modale qui apparait au clic dans <span slot="modal_text">  
+        -->
+        <Toast>
+            <span slot="button">
+                Ajouter à l'agenda
+            </span>
 
-<h2>Adress Searchbar</h2>
-<Searchbar></Searchbar>
+            <span slot="modal_title">
+                Evènement ajouté
+            </span>
+
+            <span slot="modal_text">
+                Vous pouvez retrouver cet évènement dans votre agenda
+            </span>
+        </Toast>
+    </div>
+    <div class="doc">
+        <h2>Toast</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+
+    </div>
+</div>
+<div class="flex">
+    <div>
+        <!-- 
+            Pour créer ses Feeds : 
+            donner ses valeurs dans la variable checkpoints_list sous le format [ "text", "status", "date" ].
+            Les status disponsibles sont : sent, loading, closed, validated.
+        -->
+        <Feeds checkpoints={checkpoints_list} />
+    </div>
+    <div class="doc">
+        <h2>Feeds</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+    </div>
+</div>
 
 <div class="flex">
-    <UserCard darkMode={true} persons={persons} />
-    <UserCard darkMode={false} persons={persons} />
+    <div>
+        <UserCard darkMode={darkMode} persons={persons} />
+    </div>
+    <div class="doc">
+        <h2>User card</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+    </div>
 </div>
-<Reviews darkMode={false} reviewsInfo={reviewsInfo}></Reviews> 
-<Reviews darkMode={true} reviewsInfo={reviewsInfo}></Reviews> 
-<Button darkMode={false} />
-<Button darkMode={true} />
 
+<div class="flex reviews">
+        <Reviews darkMode={darkMode} reviewsInfo={reviewsInfo}></Reviews> 
+    <div class="doc  reviews">
+        <h2>Reviews</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+    </div>
+</div>
+
+<div class="flex">
+    <div>
+        <Dropdown />
+    </div>
+    <div class="doc">
+        <h2>Dropdown</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+    </div>
+</div>
+
+<div class="flex">
+    <div>
+        <Searchbar></Searchbar>
+    </div>
+    <div class="doc">
+        <h2>Adress Searchbar</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+    </div>
+</div>
+
+
+<!-- <Reviews darkMode={true} reviewsInfo={reviewsInfo}></Reviews>  -->
+
+<!-- </div> -->
+
+<div on:click={toggleMode}>
+    <Button darkMode={darkMode} />
+</div>
+
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+        
+    body {
+        overflow-y: hidden;
+
+    }
+
+    .container {
+        width: 100vw;
+    }
+
+    .flex {
+        display: flex;
+        /* width: 100vw; */
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        gap: 50px
+    }
+
+    .flex > div {
+        width: 50%;
+    }
+
+    .doc > h2 {
+        margin-bottom: 1em;
+        color: black;
+    }
+    .doc > p {
+        margin-bottom: 2em;
+        color: black;
+
+    }
+
+    .doc {
+        text-align: left;
+    }
+ 
+</style>

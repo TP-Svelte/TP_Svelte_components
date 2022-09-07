@@ -34,6 +34,7 @@ import StarRating from 'svelte-star-rating';
     border-radius: 24px;
     text-align: left;
     margin: 2em;
+    transition: 0.3s all ease-in-out;
 
 }
 .container-dark {
@@ -45,6 +46,8 @@ import StarRating from 'svelte-star-rating';
     border-radius: 24px;
     text-align: left;
     margin: 2em;
+    transition: 0.3s all ease-in-out;
+
 }
 
 .content {
