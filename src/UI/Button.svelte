@@ -21,8 +21,8 @@
         transition: 0.4s all ease-in-out;
     }
     .button-dark {
-        background-color: #27262D;
-        color: #DBEBE3;
+        background-color: #00181E;
+        color: #E6FCF3;
         transition: 0.3s all ease-in-out;
 
     }

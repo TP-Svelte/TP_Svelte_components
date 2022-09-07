@@ -1,8 +1,9 @@
 <script>
+export let darkMode;
 
 </script>
 
-<div class="container">
+<div class={darkMode ? "container" : "container-dark"}>
     <h1>
     Docs
     Components
@@ -16,7 +17,17 @@
 <style>
 .container {
     margin-bottom: 75px;
-    color: black;
+    color: #001014;
+    transition: 0.3s all ease-in-out;
+    width: 100%;
+
+}
+.container-dark {
+    margin-bottom: 75px;
+    color: #E6FCF3;
+    transition: 0.3s all ease-in-out;
+    width: 100%;
+
 
 }
 h1 {
