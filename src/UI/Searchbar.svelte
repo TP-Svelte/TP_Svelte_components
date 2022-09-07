@@ -4,21 +4,20 @@ let data = ''
 let isDataValid = false;
 
 const search  = async () => {
-    isInputEmpty();
+     isInputEmpty();
 
-    if (!isDataValid){
-        data = '';
-        const response = await fetch('https://api-adresse.data.gouv.fr/search/?q=' + input )
-        data = await response.json()
-    }
-}
+     if (!isDataValid){
+         data = '';
+         const response = await fetch('https://api-adresse.data.gouv.fr/search/?q=' + input )
+         data = await response.json()
+     }
+ }
 
-const isInputEmpty = () => {
-    if (input == '' && isDataValid){
-        return isDataValid = false;
-    }
-
-}
+ const isInputEmpty = () => {
+     if (input == '' && isDataValid){
+         return isDataValid = false;
+     }
+ }
 
 const updateInput = (key) => {
     input = data.features[key].properties.label
@@ -32,18 +31,20 @@ const resetInput = () => {
 }
 
 function debounce(func, timeout = 300){
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => { func.apply(this, args); }, timeout);
-  };
-}
+   let timer;
+   return (...args) => {
+     clearTimeout(timer);
+     timer = setTimeout(() => { func.apply(this, args); }, timeout);
+   };
+ }
 </script>
 
 
 <div class='container'>
     <div>
-    <input type="text" placeholder="Adresse" class:is-active={isDataValid} bind:value={input} on:input={debounce(() => search())}/> 
+
+    <input type="text" placeholder="Address" class:is-active={isDataValid} bind:value={input} on:input={debounce(() => search())}/> 
+
     <div id='deleteBtn' on:click={resetInput}></div>
     
     {#if data}
@@ -87,8 +88,8 @@ input:focus{
 }
 
 input.is-active {
-    border: 2px solid #7DCBA4;
-}
+     border: 2px solid #7DCBA4;
+ }
 
 li {
     padding-left: 20px;

@@ -28,13 +28,13 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
     background-color: #F2F2F2;
     padding: 2em;
     border-radius: 24px;
-    transition: 0.3s all ease-in-out;
+            transition: 0.3s all ease-in-out;
 
 }
 .container-dark {
     margin: 2em;
     width: 20vw;
-    background-color: #141316;
+    background-color: #001014;
     padding: 2em;
     border-radius: 24px;
     transition: 0.3s all ease-in-out;
@@ -70,7 +70,7 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
         width: 100%;
         height: 45px;
         border-radius: 15px;
-        background-color: #27262D;
+        background-color: #00C675;
         text-decoration: none;
         border: 0px;
         padding-left: 25px;
@@ -79,6 +79,9 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
 
 }
 
+input::placeholder {
+    color: #001014;
+}
 input:focus {
  outline: none;
 }
