@@ -38,6 +38,12 @@
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nemo aperiam, eveniet omnis, delectus magni re",
         stars: 5
     },
+        {
+        name: 'Valentin',
+        title: "Can't say enough goog things",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nemo aperiam, eveniet omnis, delectus magni re",
+        stars: 1
+    },
 ]
 	let red = 0;
 	let green = 0;
@@ -62,7 +68,7 @@
     <Button darkMode={darkMode} />
 </div>
 <div class="flex">
-    <div>
+    <div >
         <!-- 
             Pour créer son Toast : 
             - mettre le nom du bouton dans le <span slot="button">
@@ -90,7 +96,7 @@
     </div>
 </div>
 <div class="flex">
-    <div>
+    <div class="hover-ui">
         <!-- 
             Pour créer ses Feeds : 
             donner ses valeurs dans la variable checkpoints_list sous le format [ "text", "status", "date" ].
@@ -105,7 +111,7 @@
 </div>
 
 <div class="flex">
-    <div>
+    <div class="hover-ui">
         <UserCard darkMode={darkMode} persons={persons} />
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
@@ -114,8 +120,10 @@
     </div>
 </div>
 
-<div class="flex reviews">
-        <Reviews darkMode={darkMode} reviewsInfo={reviewsInfo}></Reviews> 
+<div class="reviews">
+    <div class="hover-ui">       
+         <Reviews  darkMode={darkMode} reviewsInfo={reviewsInfo}></Reviews> 
+    </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Reviews</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
@@ -133,7 +141,7 @@
 </div>
 
 <div class="flex">
-    <div>
+    <div class="hover-ui">
         <Searchbar></Searchbar>
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
@@ -222,5 +230,25 @@
         transition: 0.3s all ease-in-out;
 
     }
+    .reviews {
+        width: 100%;
+    }
+    .reviews > .doc {
+        padding-left: 2em;
+        width: 70%;
 
+    }
+    .reviews > .doc-dark {
+        padding-left: 2em;
+        width: 70%;
+
+    }
+.hover-ui {
+    transition: 0.3s all ease-in-out;
+
+}
+.hover-ui:hover {
+    transform:translateY(-20px);
+
+}
 </style>
