@@ -64,7 +64,6 @@ function debounce(func, timeout = 300){
 
 .container {
     padding: 18px 3%;
-    min-height: 400px;
     width: 500px;
     border-radius: 24px;
 }

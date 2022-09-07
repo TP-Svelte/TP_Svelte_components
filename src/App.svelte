@@ -201,6 +201,12 @@
         gap: 50px
     }
 
+    @media (max-width: 950px){
+        .flex {
+            flex-wrap: wrap;
+        }
+    } 
+
     .flex > div {
         width: 50%;
     }
