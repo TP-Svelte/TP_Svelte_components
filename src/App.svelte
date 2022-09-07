@@ -249,6 +249,7 @@
 }
 .hover-ui:hover {
     transform:translateY(-20px);
+    cursor: pointer;
 
 }
 </style>
