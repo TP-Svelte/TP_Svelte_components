@@ -5,6 +5,9 @@
     import Feeds from "./UI/Feeds.svelte";
     import Toast from "./UI/Toast.svelte";
     import Searchbar from "./UI/Searchbar.svelte";
+    import Button from "./UI/Button.svelte";
+    import Reviews from "./UI/Reviews.svelte"
+    
 
     let persons = [{
         name: 'Maxime',
@@ -26,6 +29,15 @@
       [ "Dossier en cours de réévaluation", "loading", "6 sept"],
       [ "Dossier accepté", "validated", "15 sept" ]    
     ];
+
+    // REVIEWS
+    let reviewsInfo = [
+        {
+        name: 'Valentin',
+        title: "Can't say enough goog things",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nemo aperiam, eveniet omnis, delectus magni re",
+        stars: 5
+    }]
 </script>
 
 <h1>Nos composants</h1>
@@ -58,11 +70,19 @@
 -->
 <Feeds checkpoints={checkpoints_list} />
 
-<h2>User Card</h2>
-<UserCard persons={persons} />
 
 <h2>Dropdown</h2>
 <Dropdown />
 
 <h2>Adress Searchbar</h2>
 <Searchbar></Searchbar>
+
+<div class="flex">
+    <UserCard darkMode={true} persons={persons} />
+    <UserCard darkMode={false} persons={persons} />
+</div>
+<Reviews darkMode={false} reviewsInfo={reviewsInfo}></Reviews> 
+<Reviews darkMode={true} reviewsInfo={reviewsInfo}></Reviews> 
+<Button darkMode={false} />
+<Button darkMode={true} />
+

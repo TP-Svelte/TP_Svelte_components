@@ -1,14 +1,16 @@
 <script>
 export let persons = []
+export let darkMode;
+
 let search = "";
 $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
 
 
 </script>
-<div class="container">
+<div class={darkMode ?  'container' : 'container-dark'}>
     <div class="filter">
         <img class="icon" src="https://static.thenounproject.com/png/101791-200.png" alt="">
-        <input bind:value={search} type="search" placeholder="Search for a user">
+        <input class={darkMode ?  'input-light' : 'input-dark'} bind:value={search} type="search" placeholder="Search for a user">
 
     </div>
     {#each filteredList as person, index}
@@ -21,29 +23,33 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
 
 <style>
 .container {
+    margin: 2em;
     width: 20vw;
-    /* height: 40vh; */
     background-color: #F2F2F2;
     padding: 2em;
     border-radius: 24px;
-    /* display: flex; */
-
 }
+.container-dark {
+    margin: 2em;
+    width: 20vw;
+    background-color: #141316;
+    padding: 2em;
+    border-radius: 24px;
+}
+
 .content {
     margin-top: 30px;
     display: flex;
     justify-items: center;
     align-items: center;
     color: #BCBCBC;
-
 }
 
 .filter {
     position: relative;
-
 }
 
-input {
+.input-light {
         width: 100%;
         height: 45px;
         border-radius: 15px;
@@ -52,8 +58,24 @@ input {
         border: 0px;
         padding-left: 25px;
         text-indent: 40px;
+        color:#27262D ;
+}
+.input-dark {
+        width: 100%;
+        height: 45px;
+        border-radius: 15px;
+        background-color: #27262D;
+        text-decoration: none;
+        border: 0px;
+        padding-left: 25px;
+        text-indent: 40px;
 
 }
+
+input:focus {
+ outline: none;
+}
+
 img {
     width: 50px;
     height: 50px;
