@@ -39,9 +39,6 @@ const resetInput = () => {
 
 
 <style> 
-:global(body)  {
-    background: #141316;
-}
 
 .container {
     padding: 18px 3%;
