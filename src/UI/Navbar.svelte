@@ -1,37 +1,39 @@
 <script>
+	export let darkMode;
 
-//// Éléments modifiables 
-// Logo Navbar
-const logo = "https://www.pngmart.com/files/10/Apple-Logo-PNG-Clipart.png"
-// Items + Link Navbar
-export let navbarItems = [
-  { item: 'Home', link: '#' },
-  { item: 'About', link: '#' },
-  { item: 'Contact', link: '#' }
-];
+	//// Éléments modifiables 
+	// Logo Navbar
+	const logo = "https://www.pngmart.com/files/10/Apple-Logo-PNG-Clipart.png"
+	// Items + Link Navbar
+	export let navbarItems = [
+	{ item: 'Home', link: '#' },
+	{ item: 'About', link: '#' },
+	{ item: 'Contact', link: '#' }
+	];
 </script>
 
-<div class="nav-wrapper">
-  <div class="logo-container">
-    <img class="logo" src={ logo } alt="Logo">
-  </div>
-  <nav>
-    <input class="hidden" type="checkbox" id="menuToggle">
-    <label class="menu-btn" for="menuToggle">
-      <div class="menu"></div>
-      <div class="menu"></div>
-      <div class="menu"></div>
-    </label>
-    <div class="nav-container">
-      <ul class="nav-tabs">
-        {#each navbarItems as navbarItem }
-          <li class="nav-tab"><a href={ navbarItem.link }>{ navbarItem.item }</a></li>
-        {/each}
-      </ul>
-    </div>
-  </nav>
+<div class="class={darkMode ? 'dropdown-light' : 'dropdown-dark'}">
+	<div class="nav-wrapper">
+	<div class="logo-container">
+		<img class="logo" src={ logo } alt="Logo">
+	</div>
+	<nav>
+		<input class="hidden" type="checkbox" id="menuToggle">
+		<label class="menu-btn" for="menuToggle">
+		<div class="menu"></div>
+		<div class="menu"></div>
+		<div class="menu"></div>
+		</label>
+		<div class="nav-container">
+		<ul class="nav-tabs">
+			{#each navbarItems as navbarItem }
+			<li class="nav-tab"><a href={ navbarItem.link }>{ navbarItem.item }</a></li>
+			{/each}
+		</ul>
+		</div>
+	</nav>
+	</div>
 </div>
-
 
 <style>
 .nav-wrapper {

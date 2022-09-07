@@ -3,6 +3,7 @@
     import Steps from "./UI/Steps.svelte";
     import UserCard from "./UI/UserCard.svelte";
     import Dropdown from "./UI/Dropdown.svelte";
+    import Navbar from "./UI/Navbar.svelte";
     import Feeds from "./UI/Feeds.svelte";
     import Toast from "./UI/Toast.svelte";
     import Searchbar from "./UI/Searchbar.svelte";
@@ -139,11 +140,21 @@
 </div>
 
 <div class="flex">
-    <div>
-        <Dropdown />
+    <div class="hover-ui">
+        <Dropdown darkMode={darkMode}/>
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Dropdown</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+    </div>
+</div>
+
+<div class="flex">
+    <div class="hover-ui">
+        <Navbar darkMode={darkMode}/>
+    </div>
+    <div class={darkMode ?  'doc' : 'doc-dark'}>
+        <h2>Navbar</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
     </div>
 </div>
