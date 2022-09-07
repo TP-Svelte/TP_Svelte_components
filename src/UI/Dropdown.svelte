@@ -1,7 +1,6 @@
 <script>
 
 import Arrow from '/src/assets/arrow.svg';
-import Ellipse1 from '/src/assets/ellipse1.svg';
 
 //// Éléments modifiables 
 // Titre Dropdown
@@ -12,12 +11,14 @@ export let dropdownItems = [
   { item: 'Option B' },
   { item: 'Option C' }
 ];
+//Couleur ellipse Dropdown
+export let EllipseColor = '#C6E0D7';
+// Image ellipse Dropdown
+export let EllipseImg = '/src/assets/list.svg';
 //Fermeture automatique du Dropdown
-let automaticClose = false; 
+export let automaticClose = false; 
 //Item Selectionné devient titre du Dropdown
-let selectedItemIsTitle = false; 
-//Affiche l'item séléctionné
-let showSelectedItem = false; 
+export let selectedItemIsTitle = true; 
 
 let openDropdown = false; 
 
@@ -38,9 +39,6 @@ function selected() {
   if (selectedItemIsTitle) {
     dropdownTitle = activeItems;
   }
-  if (showSelectedItem) {
-    elementSelected = 'Vous avez choisi ' + activeItems;
-  }
   if (automaticClose) {
     toggle()
   }
@@ -49,7 +47,9 @@ function selected() {
 </script>
 
 <button on:click={ toggle } aria-expanded={ openDropdown }>
-    <img id="ellipse_btn" src={ Ellipse1 } alt="">
+    <div id="ellipse_btn" style:background-color={EllipseColor}>
+      <img src="{ EllipseImg }" alt="list icon">
+    </div>
     <span>{ dropdownTitle }</span>
     <img id="arrow" src={ Arrow } alt="">
 </button>
@@ -60,7 +60,7 @@ function selected() {
         {#each dropdownItems as dropdownItem}
 
         <li class="active hidden" on:click={ selected }>
-            <img class="ellipses" src={ Ellipse1 } alt="">
+            <div id="ellipse_list" style:background-color={EllipseColor}></div>
             <p>{ dropdownItem.item } </p>
         </li>
         {/each}
@@ -68,16 +68,15 @@ function selected() {
 </div>
 {/if}
 
-<p>{ elementSelected }</p>
-
 <style>
   button {
     background-color: #F2F2F2;
     border-radius: 50px;
     display: flex;
-    padding: 6px 14px 6px 8px;
+    padding: 10px 22px 10px 14px;
     border: none;
     margin-bottom: 5px;
+    cursor: pointer;
     /* margin: 50px */
   }
   button img {
@@ -87,27 +86,43 @@ function selected() {
   button span {
     margin-top: auto;
     margin-bottom: auto;
-    color: #a3a3a3;
+    color: #9F9F9F;
     margin-right: 35px;
+    font-weight: 700;
   }
   #ellipse_btn {
+    width: 40px;
+    height: 40px;
+    border-radius:50px;
     margin-right: 15px;
-    width: 35px;
+    display: flex;
+    justify-content: center;
+  }
+  #ellipse_btn > img {
+    max-width: 24px;
+  }
+
+  #ellipse_list {
+    width: 5px;
+    height: 5px;
+    margin-right: 15px;
+    border-radius:50px;
+    margin-bottom: auto;
+    margin-top: auto;
   }
   #arrow {
     height: 20px;
     transition: transform 0.2s ease-in;
   }
 
-  [aria-expanded=true] #arrow { transform: rotate(0.25turn); }
-  .ellipses {
-    width: 27px;
-    margin-right: 15px;
+  [aria-expanded=true] #arrow {
+    transform: rotate(0.25turn);
   }
+
   #dropdown_items {
     background-color: #F2F2F2;
     border-radius: 20px;
-    display: inline-block;
+    display: table;
     min-width: 200px;
     padding: 5px 15px;
   }
@@ -120,16 +135,22 @@ function selected() {
     display: flex;
     margin-top: 15px;
     margin-bottom: 15px;
+    padding: 0 8px;
   }
   li p {
     color: #a3a3a3;
     margin-top: auto;
     margin-bottom: auto;
+    cursor: pointer;
+  }
+  li p:hover {
+    font-weight: 700;
   }
   .active {
-    font-weight: 600;
+    font-weight: 700;
   }
   .active.hidden{
     font-weight: 400;
   }
+
 </style>
