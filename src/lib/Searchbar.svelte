@@ -19,13 +19,11 @@ const resetInput = () => {
 }
 </script>
 
+
 <div class='container'>
     <div>
     <input type="text" placeholder="Adresse" bind:value={input} on:input={search}/> 
     <div id='deleteBtn' on:click={resetInput}></div>
-    
-    
-
     
     {#if data}
         <ul>
@@ -36,12 +34,7 @@ const resetInput = () => {
             {/each}
         </ul>
     {/if}
-</div>
-    
-
-
-
-    
+    </div>  
 </div>
 
 
