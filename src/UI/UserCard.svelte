@@ -46,7 +46,7 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
     display: flex;
     justify-items: center;
     align-items: center;
-    color: #BCBCBC;
+    color: #9F9F9F;
 }
 
 .filter {

@@ -1,5 +1,6 @@
 <script>  
     export let checkpoints;
+    export let darkMode;
 
     const sent_img = "src/assets/sent.svg";
     const loading_img = "src/assets/loading.svg";
@@ -7,7 +8,7 @@
     const validated_img = "src/assets/validated.svg";
 </script>
 
-<div id="Feeds">
+<div id="Feeds" class={darkMode ?  'feeds-light' : 'feeds-dark'}>
     {#each checkpoints as checkpoint}
         <div>
             {#if checkpoint[1] === "sent"}
@@ -27,10 +28,16 @@
 
 <style>
     #Feeds{
-        /* margin: 50px; */
-        background-color: #F2F2F2;
         padding: 50px;
         border-radius: 24px;
+    }
+
+    .feeds-light{
+        background-color: #F2F2F2;
+    }
+
+    .feeds-dark{
+        background-color: #141316;
     }
 
     #Feeds div{
