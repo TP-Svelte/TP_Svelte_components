@@ -62,11 +62,6 @@
 </script>
 
 
-
-<Steps/> 
-<InputNumber/> 
-
-
 <div class="container">
 <Header darkMode={darkMode} />
 <div on:click={toggleMode}>
@@ -159,6 +154,10 @@
 <!-- <Reviews darkMode={true} reviewsInfo={reviewsInfo}></Reviews>  -->
 
 </div>
+
+<Steps/> 
+<InputNumber/> 
+
 
 <div on:click={toggleMode}>
     <Button darkMode={darkMode} />
