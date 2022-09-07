@@ -1,5 +1,6 @@
 <script>
-
+    import InputNumber from "./InputNumber.svelte";
+    import Steps from "./Steps.svelte";
     import UserCard from "./UI/UserCard.svelte";
     import Dropdown from "./UI/Dropdown.svelte";
     import Feeds from "./UI/Feeds.svelte";
@@ -62,6 +63,11 @@
 
 
 
+<!--<Steps/> -->
+<!--<InputNumber/> -->
+
+
+<style>
 <div class="container">
 <Header darkMode={darkMode} />
 <div on:click={toggleMode}>
