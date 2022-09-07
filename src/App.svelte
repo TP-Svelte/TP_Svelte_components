@@ -4,7 +4,11 @@
 </script>
 
 
-<Steps/>
+
+
+
+
+<!-- <Steps/> -->
 <InputNumber/>
 
 

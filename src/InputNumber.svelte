@@ -36,6 +36,7 @@
         };
     
         const disableValidateChoiceNumber = () => {
+            code = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
             numberValidate = false;
         }
     
@@ -66,14 +67,12 @@
         <p>Choisissez le nombre de case de code de vérification</p>
     
         <div>
-            <button on:click={ supNumber }>
-                +
-            </button>
-            
-            <p>{number}</p>
-            
             <button on:click={ subNumber }>
                 -
+            </button>
+            <input type="number" bind:value="{number}" id="">
+            <button on:click={ supNumber }>
+                +
             </button>
             
         </div>
@@ -86,18 +85,9 @@
     {#if numberValidate === true && codeValidate === false }
     
         <p>Chiffre / nombre retenu : { number }</p>
-    
+        <div class="code">
         {#each Array(number) as _, i}
-            <div>
-                <button on:click={ 
-                 (() => {
-                    supNumberCode(i);
-                    })
-                }>
-                    +
-                </button>
-                
-                <p>{ selectCode[i] }</p> 
+            <div class="chiffre">
                 
                 <button on:click={ 
                     (() => {
@@ -106,8 +96,21 @@
                 }>
                     -
                 </button> 
+
+                <span>
+                    <input type="number" value={selectCode[i]}>
+                </span>
+
+                <button on:click={ 
+                     (() => {
+                        supNumberCode(i);
+                        })
+                    }>
+                        +
+                    </button>
             </div>        
         {/each}
+        </div>
     
         <button on:click={ validateCode }>
             Valider
@@ -119,16 +122,38 @@
     {/if}
     
     
-    
-    
-    
-    
-    
+
     
     {#if codeValidate === true}
         <p>Félicitations, le code a bien été validé !</p>
     {/if}
     
     <style>
-    
+
+
+
+
+
+
+
+    /* Retrait flèches input */
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+        
+        /* Chrome */
+        input::-webkit-inner-spin-button,
+        input::-webkit-outer-spin-button { 
+            -webkit-appearance: none;
+            margin:0;
+        }
+        
+        /* Opéra*/
+        input::-o-inner-spin-button,
+        input::-o-outer-spin-button { 
+            -o-appearance: none;
+            margin:0
+}
     </style>
