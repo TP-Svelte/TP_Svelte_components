@@ -1,6 +1,6 @@
 <script>
     export let darkMode;
-    import ButtonMain from "./Button.svelte";
+    import Button from "./Button.svelte";
     
     const deploy = () => {
         document.getElementById("hidden_modal").style.display = "block";
@@ -9,9 +9,9 @@
 </script>
 
 <div id="Toast" class={darkMode ? 'toast-light' : 'toast-dark'} on:click={ deploy }>
-    <ButtonMain darkMode={darkMode}>
+    <Button darkMode={darkMode}>
         <slot name="button"/>
-    </ButtonMain>
+    </Button>
     <div id="hidden_modal" class={darkMode ? 'toast-light' : 'toast-dark'} >
         <h3><slot name="modal_title"/></h3>
         <p><slot name="modal_text"/></p>
@@ -20,7 +20,6 @@
 
 <style>
     #Toast{
-        margin: 50px;
         padding: 50px;
         border-radius: 24px;
     }
