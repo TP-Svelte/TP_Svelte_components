@@ -1,8 +1,24 @@
 <script>
-  import Feeds from "./UI/Feeds.svelte";
-  import Toast from "./UI/Toast.svelte";
-  
-  let checkpoints_list = [
+
+    import UserCard from "./components/UI/UserCard.svelte";
+    import Dropdown from "./UI/Dropdown.svelte";
+    import Feeds from "./UI/Feeds.svelte";
+    import Toast from "./UI/Toast.svelte";
+
+    let persons = [{
+        name: 'Maxime',
+        cover: 'https://images.unsplash.com/photo-1657664065994-5e257c88b7f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1683&q=800'
+    },
+        {name: 'Jul',
+        cover: 'https://images.unsplash.com/photo-1662425877955-1092c2e1309e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80'
+    },
+        {name: 'Jul',
+        cover: 'https://images.unsplash.com/photo-1657664065994-5e257c88b7f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1683&q=80'
+    },
+    ]
+    
+      
+    let checkpoints_list = [
       [ "Dossier envoyé", "sent", "2 sept" ],
       [ "Dossier en cours de traitement", "loading", "2 sept" ],
       [ "Dossier refusé", "closed", "5 sept" ],
@@ -40,3 +56,9 @@
     Les status disponsibles sont : sent, loading, closed, validated.
 -->
 <Feeds checkpoints={checkpoints_list} />
+
+<h2>User Card</h2>
+<UserCard persons={persons} />
+
+<h2>Dropdown</h2>
+<Dropdown />

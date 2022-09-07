@@ -1,0 +1,105 @@
+<script>
+let input = '';
+let data = ''
+
+const search  = async () => {
+    data = '';
+    const response = await fetch('https://api-adresse.data.gouv.fr/search/?q=' + input )
+    data = await response.json()
+}
+
+const updateInput = (key) => {
+    input = data.features[key].properties.label
+    data = '';
+}
+
+const resetInput = () => {
+    input = '';
+    data = '';
+}
+</script>
+
+
+<div class='container'>
+    <div>
+    <input type="text" placeholder="Adresse" bind:value={input} on:input={search}/> 
+    <div id='deleteBtn' on:click={resetInput}></div>
+    
+    {#if data}
+        <ul>
+            {#each Object.entries(data.features) as _, i}
+                <li on:click={(() => updateInput(i))}>
+                    {data.features[i].properties.label}
+                </li>
+            {/each}
+        </ul>
+    {/if}
+    </div>  
+</div>
+
+
+<style> 
+:global(body)  {
+    background: #141316;
+}
+
+.container {
+    padding: 18px 3%;
+    min-height: 400px;
+    width: 500px;
+    border-radius: 24px;
+}
+
+input {
+    padding-left: 20px;
+    margin-right: 0px !important;
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    background-color: white;
+    border: none;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    color: #9F9F9F;
+}
+
+input:focus{
+    outline: none;
+}
+
+li {
+    padding-left: 20px;
+    width: 100%;
+    
+    cursor: pointer;
+    list-style: none;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    background-color: white;
+    color: #BCBCBC;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+li:hover {
+    background-color: #DBEBE3;
+}
+
+li:last-child {
+    border-radius: 0px 0px 4px 4px;
+}
+
+ul {
+    display: block;
+    width: 100%;
+    margin-top: -32px;
+    padding-top: 20px;
+    padding-left: 0px;    
+}
+
+</style>
+
+
