@@ -213,6 +213,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat';
     }
     :global(.is-dark) {
         background-color: #00181E;
