@@ -78,6 +78,9 @@
   .dropdown-light {
     background-color: #F2F2F2;
   }
+  #Dropdown {
+    min-height: 270px;
+  }
   button {
     border-radius: 50px;
     display: flex;
