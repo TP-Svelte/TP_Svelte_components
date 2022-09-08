@@ -137,7 +137,7 @@
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>User card</h2>
         <p>Pour créer une carte utilisateur :
-        Invoquez le composant "UserCard /" en passant en props un tableau d'objet avec les paramètres "name: string, cover: string" et un darkMode avec les paramètre true/false
+        Appelez le composant "UserCard /" en passant en props un tableau d'objet avec les paramètres "name: string, cover: string" et un darkMode avec les paramètre true/false
         </p>
     </div>
 </div>
@@ -149,7 +149,7 @@
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Reviews</h2>
         <p>Pour créer une carte d'avis:
-            Invoquez le composant "Reviews /" en passant en props un tableau d'objet avec les paramètres "name: string, title: string, description: string, stars: number(entre 0 et 5)"  et un darkMode avec les paramètre true/false
+            Appelez le composant "Reviews /" en passant en props un tableau d'objet avec les paramètres "name: string, title: string, description: string, stars: number(entre 0 et 5)"  et un darkMode avec les paramètre true/false
             </p>    </div>
 </div>
 
@@ -290,6 +290,7 @@
 <br>
 </div>
 
+<div class="flex">
 
 <div class="button-up" on:click={toggleMode}>
     <Button darkMode={darkMode}>
@@ -300,7 +301,11 @@
         {/if}
     </Button>
 </div>
-
+<div class={darkMode ?  'doc' : 'doc-dark'}>
+    <h2>Dark mode</h2>
+    <p>Passez en props "darkMode" avec un boolean en props.</p>
+</div>
+</div>
 <style>
 
     * {
