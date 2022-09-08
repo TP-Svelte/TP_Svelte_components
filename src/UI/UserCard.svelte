@@ -70,7 +70,7 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
         width: 100%;
         height: 45px;
         border-radius: 15px;
-        background-color: #00C675;
+        background-color: #E6FCF3;
         text-decoration: none;
         border: 0px;
         padding-left: 25px;
