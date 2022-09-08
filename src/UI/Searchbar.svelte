@@ -82,7 +82,7 @@ input {
 }
 
 .input-light {
-    background-color: white;
+    background-color: #F2F2F2;
     color: #9F9F9F;
 
 }
