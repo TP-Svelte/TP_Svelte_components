@@ -165,7 +165,10 @@
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Adress Searchbar</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+        <p>Ce component s'appuie sur l'API open data de la France. 
+           Elle référence l'ensemble des adresses de France.
+           Comme elle est gratuite, il n'y a pas d'API Key à lui passer.<br>
+         </p>
     </div>
 </div>
 
