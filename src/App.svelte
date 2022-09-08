@@ -204,9 +204,9 @@
 </div>
 
 <!-- <div class="flex"> -->
-    <div class="hover-ui">
+    <div >
         <Carousel 
-
+        darkMode={darkMode}
         images={images} 
         imageWidth={250}
         imageSpacing={20}

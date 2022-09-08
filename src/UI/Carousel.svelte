@@ -1,5 +1,6 @@
 <script>
     import { flip } from 'svelte/animate';
+    export let darkMode;
     export let images;
     export let imageWidth = 300;
     export let imageSpacing = 20; 
@@ -38,8 +39,8 @@
             {/each}
         </div>
         <div class="carousel-button">
-            <button id="left" on:click={rotateRight}> Left </button>
-            <button id="right" on:click={rotateLeft}> Right </button>
+            <button class={darkMode ?  'button-dark' : 'button-light'} id="left" on:click={rotateRight}> Left </button>
+            <button  class={darkMode ?  'button-dark' : 'button-light'} id="right" on:click={rotateLeft}> Right </button>
          </div>
     
     
@@ -47,8 +48,13 @@
     
     
     <style>
-
+        img {
+            width: 300px !important;
+            height: 300px;
+            object-fit: cover;
+        }
         .carousel-container{
+            margin-top: 2em;
             width: 100%;
             overflow-x: hidden; 
         }
@@ -60,6 +66,21 @@
         }
         .carousel-button {
             margin-top: 2em;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            
         }
+        .button-light {
+        background-color: rgba(0,220,130,1);
+        color: black;
+        transition: 0.4s all ease-in-out;
+    }
+    .button-dark {
+        background-color: #00181E;
+        color: #E6FCF3;
+        transition: 0.3s all ease-in-out;
+
+    }
     </style>
     
