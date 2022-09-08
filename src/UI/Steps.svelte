@@ -4,10 +4,12 @@ import Button from "./Button.svelte";
     export let darkMode;
 // variables
     let step = 1;
+    let steps = ["Step 1", "Step 2", "Step 3"];
     let imgs = ["src/assets/loading.svg", "src/assets/validated_dark.svg"];
+
 // fonctions
     const nextStep = () => {
-        if (step < 4) {
+        if (step < steps.length + 2) {
             step ++;
         }
     }
@@ -29,7 +31,7 @@ import Button from "./Button.svelte";
                 <img src={imgs[0]} alt="Mon image" width="20px">
             </span>
             <span>
-                Step 1
+                {steps[0]}
             </span>
         </div>
         {:else}
@@ -39,7 +41,7 @@ import Button from "./Button.svelte";
                 <img src={imgs[1]} alt="Mon image" width="20px">
             </span>
             <span>
-                Step 1
+                {steps[0]}
             </span>
         </div>
         {/if}
@@ -48,9 +50,9 @@ import Button from "./Button.svelte";
         {#if step < 2}
             <div class="step">
                     <div class="line"></div>
-                    <p>
-                        Step 2
-                    </p>
+                    <span>
+                        {steps[1]}
+                    </span>
             </div>
 
         {:else if step === 2}
@@ -60,7 +62,7 @@ import Button from "./Button.svelte";
                 <img src={imgs[0]} alt="Mon image" width="20px">
             </span>
             <span>
-                Step 2
+                {steps[1]}
             </span>
         </div>
         {:else}
@@ -70,7 +72,7 @@ import Button from "./Button.svelte";
                 <img src={imgs[1]} alt="Mon image" width="20px">
             </span>
             <span>
-                Step 2
+                {steps[1]}
             </span>
         </div>
         {/if}
@@ -81,7 +83,7 @@ import Button from "./Button.svelte";
         <div class="step">
             <div class="line"></div>
             <span>
-                Step 3
+                {steps[2]}
             </span>
         </div>
 
@@ -92,7 +94,7 @@ import Button from "./Button.svelte";
                 <img src={imgs[0]} alt="Mon image" width="20px">
             </span>
             <span>
-                Step 3
+                {steps[2]}
             </span>
         </div>
 
@@ -103,7 +105,7 @@ import Button from "./Button.svelte";
                 <img src={imgs[1]} alt="Mon image" width="20px">
             </span>
             <span>
-                Step 3
+                {steps[2]}
             </span>
         </div>
         {/if}
@@ -154,8 +156,10 @@ import Button from "./Button.svelte";
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         margin-left: 5%;
-        height: 15%;
+        height: 50px;
         color: #9F9F9F;
+        text-align: left;
+
     }
 
     .buttons{

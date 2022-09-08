@@ -175,7 +175,9 @@
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Steps</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+        <p>Pour changer le texte des étapes :
+            <li>Changer contenu du tableau "steps" (ligne 7) par le nom de vos étapes</li>
+        </p>
     </div>
 </div>
 
@@ -184,8 +186,10 @@
         <InputNumber darkMode={darkMode}/>  
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
-        <h2>InputNumber</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+        <h2>InputNumber / Validation de code</h2>
+        <p>Pour choisir le nombre prédéfini :
+            <li>Changer les valeurs du tableau "code" (ligne 8) par le code voulu</li>
+        </p>
     </div>
 </div>
 

@@ -7,11 +7,12 @@
         let codeValidate = false;
         let code = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
         let selectCode;
+        let codePrint;
     
     // fonctions
         // choix nombre
         const supNumber = () => {
-            if(number < 10){
+            if(number < code.length){
                 number ++;
             }
         };
@@ -61,6 +62,11 @@
                 codeValidate = true;
             }
         }
+
+        const printCode = () => {
+            codePrint = selectCode.join('');
+            console.log(codePrint);
+        }
     
     </script>
     
@@ -76,7 +82,6 @@
             <button class={darkMode ? 'button-dark' : 'button-light'} on:click={ supNumber }>
                 +
             </button>
-            
         </div>
         <div on:click={ validateChoiceNumber }>
             <Button darkMode={darkMode}>
@@ -116,10 +121,7 @@
         </div>
     
         <div class="display_validation">
-            <br>
-            Code : 
-            <br>
-            <br>
+         
             <div on:click={ validateCode }>
                 <Button darkMode={darkMode}>
                     Valider
@@ -141,7 +143,6 @@
     </section>
     
     <style>
-
         section{
             border-radius: 24px;
             padding: 20px;
@@ -176,6 +177,7 @@
         .chiffre{
             margin-bottom: 10px;
         }
+    
 
     /* Retrait flèches input */
 
