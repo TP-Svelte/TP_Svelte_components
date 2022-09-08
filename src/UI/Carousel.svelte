@@ -55,8 +55,9 @@
         }
         .carousel-container{
             margin-top: 2em;
-            width: 100%;
+            width: 100vw;
             overflow-x: hidden; 
+            max-width: 100vw;
         }
         .carousel-images{
             display : flex; 
