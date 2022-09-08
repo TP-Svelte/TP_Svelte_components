@@ -152,7 +152,7 @@
         }
 
         .inputNumber-dark{
-            background-color: #141316;
+            background-color: #001014;
         }
 
         .display_validation div{
