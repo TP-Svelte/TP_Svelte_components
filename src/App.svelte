@@ -230,7 +230,15 @@
 </div>
 
 
-
+<div class="button-up" on:click={toggleMode}>
+    <Button darkMode={darkMode}>
+        {#if darkMode == true}
+            Dark mode
+        {:else}
+            Light mode
+        {/if}
+    </Button>
+</div>
 
 <style>
 
@@ -257,7 +265,8 @@
         justify-content: center;
         align-items: center;
         padding: 30px;
-        gap: 50px
+        gap: 50px;
+        margin-bottom: 5em;
     }
 
     @media (max-width: 950px){
@@ -312,6 +321,8 @@
     }
     .reviews {
         width: 100%;
+        margin-bottom: 5em;
+
     }
     .reviews > .doc {
         padding-left: 2em;
