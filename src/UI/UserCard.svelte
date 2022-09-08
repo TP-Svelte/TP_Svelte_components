@@ -1,6 +1,7 @@
 <script>
 export let persons = []
 export let darkMode;
+
 import Search from '/src/assets/search.svg';
 
 let search = "";
