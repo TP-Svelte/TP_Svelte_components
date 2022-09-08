@@ -39,7 +39,7 @@
         name: 'Valentin',
         title: "Can't say enough goog things",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nemo aperiam, eveniet omnis, delectus magni re",
-        stars: 5
+        stars: 4.5
     },
         {
         name: 'Valentin',
