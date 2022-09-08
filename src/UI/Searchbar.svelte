@@ -2,6 +2,7 @@
 let input = '';
 let data = ''
 let isDataValid = false;
+export let darkMode;
 
 const search  = async () => {
      isInputEmpty();
@@ -43,14 +44,14 @@ function debounce(func, timeout = 300){
 <div class='container'>
     <div>
 
-    <input type="text" placeholder="Address" class:is-active={isDataValid} bind:value={input} on:input={debounce(() => search())}/> 
+    <input type="text" placeholder="Address" class:is-active={isDataValid} bind:value={input} on:input={debounce(() => search())} class={darkMode ?  'input-light' : 'input-dark'}/> 
 
     <div id='deleteBtn' on:click={resetInput}></div>
     
     {#if data}
         <ul>
             {#each Object.entries(data.features) as _, i}
-                <li on:click={(() => updateInput(i))}>
+                <li on:click={(() => updateInput(i))} class={darkMode ?  'li-light' : 'li-dark'}>
                     {data.features[i].properties.label}
                 </li>
             {/each}
@@ -70,16 +71,26 @@ function debounce(func, timeout = 300){
 
 input {
     padding-left: 20px;
-    margin-right: 0px !important;
+    margin-right: 0px;
     display: block;
     width: 100%;
     height: 50px;
     border-radius: 15px;
-    background-color: white;
     border: none;
     font-weight: 400;
     font-size: 18px;
+}
+
+.input-light {
+    background-color: white;
     color: #9F9F9F;
+
+}
+
+.input-dark {
+    background-color:#E6FCF3;
+    color: black;
+
 }
 
 input:focus{
@@ -93,15 +104,27 @@ input.is-active {
 li {
     padding-left: 20px;
     width: 100%;
-    
     cursor: pointer;
     list-style: none;
     font-weight: 400;
     font-size: 16px;
-    background-color: white;
-    color: #BCBCBC;
     padding-top: 4px;
     padding-bottom: 4px;
+}
+
+.li-light {
+    background-color: white;
+    color: #BCBCBC;
+}
+
+.li-dark {
+    background-color: #E6FCF3;
+    color: black;
+}
+
+.li-dark:hover {
+    background-color: #001014;
+    color: #00DC82;
 }
 
 li:hover {

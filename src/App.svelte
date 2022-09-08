@@ -161,7 +161,7 @@
 
 <div class="flex">
     <div class="hover-ui">
-        <Searchbar></Searchbar>
+        <Searchbar darkMode={darkMode}></Searchbar>
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Adress Searchbar</h2>
