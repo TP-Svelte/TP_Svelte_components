@@ -113,7 +113,7 @@ li {
 }
 
 .li-light {
-    background-color: white;
+    background-color: #F2F2F2;
     color: #BCBCBC;
 }
 
