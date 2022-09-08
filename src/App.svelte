@@ -48,13 +48,9 @@
         stars: 1
     },
 ]
-	let red = 0;
-	let green = 0;
-	let blue = 0;
 
-	let rootElement;
+
     let darkMode = true
-    $: rootElement && rootElement.style.setProperty('--container-background', `rgb(${red}, ${green}, ${blue})`);
 
     const toggleMode = () => {
         darkMode = !darkMode
@@ -136,7 +132,9 @@
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>User card</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+        <p>Pour créer une carte utilisateur :
+        Invoquez le composant "UserCard /" en passant en props un tableau d'objet avec les paramètres "name: string, cover: string" et un darkMode avec les paramètre true/false
+        </p>
     </div>
 </div>
 
@@ -146,8 +144,9 @@
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Reviews</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
-    </div>
+        <p>Pour créer une carte d'avis:
+            Invoquez le composant "Reviews /" en passant en props un tableau d'objet avec les paramètres "name: string, title: string, description: string, stars: number(entre 0 et 5)"  et un darkMode avec les paramètre true/false
+            </p>    </div>
 </div>
 
 <div class="flex">
