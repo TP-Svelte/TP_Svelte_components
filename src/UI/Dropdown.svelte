@@ -11,6 +11,10 @@
     { item: 'Option B' },
     { item: 'Option C' }
   ];
+  //Couleur de bg du btn dropdown
+  export let dropdownBtnBG;
+  // Couleur de bg de la liste
+  export let dropdownListBG
   //Couleur ellipse Dropdown
   export let EllipseColor = '#C6E0D7';
   // Image ellipse Dropdown
@@ -44,7 +48,7 @@
 </script>
 
 <div id="Dropdown">
-  <button on:click={ toggle } aria-expanded={ openDropdown } class={darkMode ? 'dropdown-light' : 'dropdown-dark'}>
+  <button on:click={ toggle } aria-expanded={ openDropdown } class={darkMode ? 'dropdown-light' : 'dropdown-dark'} style:background-color={ dropdownBtnBG }>
       <div id="ellipse_btn" style:background-color={EllipseColor}>
         <img src="{ EllipseImg }" alt="list icon">
       </div>
@@ -53,7 +57,7 @@
   </button>
 
   {#if openDropdown === true}
-  <div id="dropdown_items" class={darkMode ? 'dropdown-light' : 'dropdown-dark'}>
+  <div id="dropdown_items" class={darkMode ? 'dropdown-light' : 'dropdown-dark'} style:background-color={dropdownListBG}>
       <ul>
           {#each dropdownItems as dropdownItem}
 
