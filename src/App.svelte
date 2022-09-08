@@ -106,7 +106,10 @@
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Toast</h2>
-        <p> La création d'un toast passe par des slots. <br>
+        <p> Le toast permet d'afficher une modale de 3 secondes en bas de l'écran avec le texte souhaité au clic sur le bouton.  
+            <br>
+            La création d'un toast passe par des slots. 
+	    <br>
             Pour créer son Toast : 
             <li>passer le nom du bouton souhaité dans le span slot="button"</li>
             <li>passer le titre de la modale qui apparait au clic dans le span slot="modal_title"</li>
@@ -121,7 +124,8 @@
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Feeds</h2>
-        <p>
+        <p> Le composant Feeds permet de créer des étapes de suivi, pour représenter l'avancée sur un sujet. 
+            <br>
             Pour créer ses Feeds : 
             passer ses valeurs en array dans la variable checkpoints_list sous le format [ "text", "status", "date" ].
             <br>Les status disponsibles sont : sent, loading, closed, validated.
