@@ -9,6 +9,7 @@
     import Searchbar from "./UI/Searchbar.svelte";
     import Button from "./UI/Button.svelte";
     import Reviews from "./UI/Reviews.svelte"
+    import Carousel from "./UI/Carousel.svelte"
     import Header from "./components/Header.svelte"
 
     let persons = [{
@@ -60,6 +61,16 @@
         document.body.classList.toggle('is-dark')
 
     }
+
+
+    const images = [
+        {image_url: "https://images.unsplash.com/photo-1657664057951-17679442315d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80", id: "image1"},
+        {image_url: "https://images.unsplash.com/photo-1662437447166-4ba78953f24f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", id: "image2"}, 
+        {image_url: "https://images.unsplash.com/photo-1662398819908-507ae18bf21f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80", id: "image3"}, 
+        {image_url: "https://images.unsplash.com/photo-1662368356341-9a9a8a9b1883?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", id: "image4"}, 
+        {image_url: "https://images.unsplash.com/photo-1662307502412-70e5b5ff2c32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80", id: "image5"}, 
+        {image_url: "https://images.unsplash.com/photo-1662384874972-cacf00a9e013?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80", id: "image6"},
+    ]
 </script>
 
 
@@ -189,23 +200,30 @@
     </div>
 </div>
 
+<!-- <div class="flex"> -->
+    <div class="hover-ui">
+        <Carousel 
+
+        images={images} 
+        imageWidth={250}
+        imageSpacing={20}
+    
+    
+    />
+    </div>
+    <div class={darkMode ?  'doc' : 'doc-dark'}>
+        <h2>InputNumber</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+    </div>
+<!-- </div> -->
+
 <!-- <Reviews darkMode={true} reviewsInfo={reviewsInfo}></Reviews>  -->
 <br>
 <br>
 </div>
 
 
-<div on:click={toggleMode}>
-    <Button darkMode={darkMode}>
-        {#if darkMode == true}
-            Dark mode
-        {:else}
-            Light mode
-        {/if}
-    </Button>
-</div>
-<br>
-<br>
+
 
 <style>
 
@@ -213,7 +231,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     }
     :global(.is-dark) {
         background-color: #00181E;
