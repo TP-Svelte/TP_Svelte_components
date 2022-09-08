@@ -1,8 +1,9 @@
 <script>
+export let darkMode;
+
 let input = '';
 let data = ''
 let isDataValid = false;
-export let darkMode;
 
 const search  = async () => {
      isInputEmpty();

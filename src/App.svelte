@@ -48,13 +48,9 @@
         stars: 1
     },
 ]
-	let red = 0;
-	let green = 0;
-	let blue = 0;
 
-	let rootElement;
+
     let darkMode = true
-    $: rootElement && rootElement.style.setProperty('--container-background', `rgb(${red}, ${green}, ${blue})`);
 
     const toggleMode = () => {
         darkMode = !darkMode
@@ -79,7 +75,7 @@
 
 <div class="container">
 <Header darkMode={darkMode} />
-<div on:click={toggleMode}>
+<div class="button-up" on:click={toggleMode}>
     <Button darkMode={darkMode}>
         {#if darkMode == true}
             Dark mode
@@ -140,7 +136,9 @@
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>User card</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+        <p>Pour créer une carte utilisateur :
+        Invoquez le composant "UserCard /" en passant en props un tableau d'objet avec les paramètres "name: string, cover: string" et un darkMode avec les paramètre true/false
+        </p>
     </div>
 </div>
 
@@ -150,8 +148,9 @@
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Reviews</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
-    </div>
+        <p>Pour créer une carte d'avis:
+            Invoquez le composant "Reviews /" en passant en props un tableau d'objet avec les paramètres "name: string, title: string, description: string, stars: number(entre 0 et 5)"  et un darkMode avec les paramètre true/false
+            </p>    </div>
 </div>
 
 <div class="flex">
@@ -208,9 +207,9 @@
 </div>
 
 <!-- <div class="flex"> -->
-    <div class="hover-ui">
+    <div >
         <Carousel 
-
+        darkMode={darkMode}
         images={images} 
         imageWidth={250}
         imageSpacing={20}
@@ -219,8 +218,9 @@
     />
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
-        <h2>InputNumber</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+        <h2>Carousel</h2>
+        <p>Ce carousel vous permet d'afficher plusieurs photos et de les faires défiler vers la gauche ou la droite!!</p>
+        <p>Passez simplement les liens des images que vous souhaitez afficher dans la variable array "images", vous pourrez ensuite modifier la width des images et l'écarts entre les images en modifiant les valeurs dans les props imageWidth et imageSpacing. </p>
     </div>
 <!-- </div> -->
 
@@ -337,6 +337,9 @@
 }
 .navbar > .hover-ui {
   padding:50px 50px 50px 0;
+}
+.button-up {
+    margin-bottom: 3em;
 }
 </style>
 
