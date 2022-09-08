@@ -1,6 +1,7 @@
 <script>
 export let persons = []
 export let darkMode;
+import Search from '/src/assets/search.svg';
 
 let search = "";
 $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
@@ -9,7 +10,7 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
 </script>
 <div class={darkMode ?  'container' : 'container-dark'}>
     <div class="filter">
-        <img class="icon" src="https://static.thenounproject.com/png/101791-200.png" alt="">
+        <img class="icon" src="{ Search }" alt="">
         <input class={darkMode ?  'input-light' : 'input-dark'} bind:value={search} type="search" placeholder="Search for a user">
 
     </div>
@@ -96,8 +97,7 @@ img {
 
 .icon {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    height: 17px;
     top: 50%;
     left: 10%;
     transform: translate(-50%, -50%);  overflow: hidden;
