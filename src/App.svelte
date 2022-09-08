@@ -155,21 +155,82 @@
 
 <div class="flex">
     <div class="hover-ui">
-        <Dropdown darkMode={darkMode}/>
+        <Dropdown darkMode={darkMode} />
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Dropdown</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+        <p>Le dropdown permet de créer une liste d'éléments cliquables.
+            <br>
+            Différentes props peuvents être spécifiées pour personnaliser le composant:
+            <li>
+                <strong>dropdownTitle</strong> le titre du dropdown
+                <br>
+                <p>Variable de type string</p>
+            </li>
+            <li>
+                <strong>dropdownItems</strong> les éléments de la liste
+                <br>
+                <p>Tableau d'objets avec item</p>
+            </li>
+            <li>
+                <strong>dropdownBtnBG</strong> couleur de bg du bouton
+                <br>
+                <p>Variable de type string avec code HEX</p>
+            </li>
+            <li>
+                <strong>dropdownListBG</strong> Couleur de bg de la liste
+                <br>
+                <p>Variable de type string avec code HEX</p>
+            </li>
+            <li>
+                <strong>EllipseColor</strong> la couleur de la puce de catégorie
+                <br>
+                <p>Variable de type string avec code HEX</p>
+            </li>
+            <li>
+                <strong>EllipseImg</strong> image de la puce de catégorie
+                <br>
+                <p>Variable de type string avec lien de l'image</p>
+            </li>
+            <li>
+                <strong>automaticClose</strong> le dropdown peut se fermer ou non après séléction
+                <br>
+                <p>Variable à true ou false</p>
+            </li>
+            <li>
+                <strong>SelectedItemIsTitle</strong> l'élément séléctionné devient le titre du dropdown ou non
+                <br>
+                <p>Variable à true ou false</p>
+            </li>
+
+        </p>
     </div>
 </div>
 
 <div class="navbar">
     <div class="hover-ui">
-        <Navbar darkMode={darkMode}/>
+        <Navbar darkMode={darkMode} />
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
         <h2>Navbar</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+        <p>
+            Ce composant est responsive et personnalisable avec ces props:
+            <li>
+                <strong>navbarItems</strong> les liens de la navbar
+                <br>
+                <p>Tableau d'objets avec item et link</p>
+            </li>
+            <li>
+                <strong>navbarLogo</strong> le logo de la navbar
+                <br>
+                <p>Variable de type string avec lien de l'image</p>
+            </li>
+            <li>
+                <strong>navbarBG</strong> couleur de bg de la navbar
+                <br>
+                <p>Variable de type string avec code HEX</p>
+            </li>
+        </p>
     </div>
 </div>
 

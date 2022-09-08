@@ -3,19 +3,21 @@
 
 	//// Éléments modifiables 
 	// Logo Navbar
-	const logo = "https://www.pngmart.com/files/10/Apple-Logo-PNG-Clipart.png"
+	export const navbarLogo = "https://www.pngmart.com/files/10/Apple-Logo-PNG-Clipart.png"
 	// Items + Link Navbar
 	export let navbarItems = [
 	{ item: 'Home', link: '#' },
 	{ item: 'About', link: '#' },
 	{ item: 'Contact', link: '#' }
 	];
+  // Couleur de la Navbar
+  export let navbarBG;
 </script>
 
 <div id="Navbar">
-	<div class="nav-wrapper {darkMode ? 'navbar-light' : 'navbar-dark'}">
+	<div class="nav-wrapper {darkMode ? 'navbar-light' : 'navbar-dark'}" style:background-color={ navbarBG }>
 		<div class="logo-container">
-			<img class="logo" src={ logo } alt="Logo">
+			<img class="logo" src={ navbarLogo } alt="Logo">
 		</div>
 		<nav>
 			<input class="hidden" type="checkbox" id="menuToggle">
@@ -24,7 +26,7 @@
 				<div class="menu {darkMode ? 'bm-light' : 'bm-dark'}"></div>
 				<div class="menu {darkMode ? 'bm-light' : 'bm-dark'}"></div>
 			</label>
-			<div class="nav-container {darkMode ? 'navbar-light' : 'navbar-dark'}">
+			<div class="nav-container {darkMode ? 'container-light' : 'container-dark'}" style:background-color={ navbarBG }>
 				<ul class="nav-tabs">
 					{#each navbarItems as navbarItem }
 						<li class="nav-tab "><a href={ navbarItem.link } class="{darkMode ? 'navlink-light' : 'navlink-dark'}">{ navbarItem.item }</a></li>
@@ -53,6 +55,14 @@
   }
   .bm-light {
     background: #191919;;
+  }
+  @media screen and (max-width: 800px) {
+    .container-light {
+      background: #F2F2F2;
+    }
+    .container-dark {
+      background: #001014;
+    }
   }
   .nav-wrapper {
     position: sticky;
