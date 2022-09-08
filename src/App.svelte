@@ -75,7 +75,7 @@
 
 <div class="container">
 <Header darkMode={darkMode} />
-<div on:click={toggleMode}>
+<div class="button-up" on:click={toggleMode}>
     <Button darkMode={darkMode}>
         {#if darkMode == true}
             Dark mode
@@ -214,8 +214,9 @@
     />
     </div>
     <div class={darkMode ?  'doc' : 'doc-dark'}>
-        <h2>InputNumber</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae sunt suscipit, fugiat hic eveniet perspiciatis eum officia quo? Dignissimos minima sunt iure magni sit repellendus officiis corrupti illo repellat.</p>
+        <h2>Carousel</h2>
+        <p>Ce carousel vous permet d'afficher plusieurs photos et de les faires défiler vers la gauche ou la droite!!</p>
+        <p>Passez simplement les liens des images que vous souhaitez afficher dans la variable array "images", vous pourrez ensuite modifier la width des images et l'écarts entre les images en modifiant les valeurs dans les props imageWidth et imageSpacing. </p>
     </div>
 <!-- </div> -->
 
@@ -332,6 +333,9 @@
 }
 .navbar > .hover-ui {
   padding:50px 50px 50px 0;
+}
+.button-up {
+    margin-bottom: 3em;
 }
 </style>
 
