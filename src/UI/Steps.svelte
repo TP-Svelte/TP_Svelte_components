@@ -147,7 +147,7 @@ import Button from "./Button.svelte";
     }
 
     .steps-dark{
-        background-color: #141316;
+        background-color: #001014;
     }
 
     .steps{

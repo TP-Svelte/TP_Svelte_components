@@ -37,7 +37,7 @@
     }
 
     .feeds-dark{
-        background-color: #141316;
+        background-color: #001014;
     }
 
     #Feeds div{
