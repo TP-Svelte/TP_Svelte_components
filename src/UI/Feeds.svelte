@@ -43,7 +43,7 @@
     #Feeds div{
         display: flex;
         flex-wrap: wrap;
-        width: 450px;
+        width: 100%;
         justify-content: space-between;
         position: relative;
     }
@@ -71,4 +71,20 @@
         font-weight: 700;
     }
 
+    @media (max-width: 900px) {
+        #Feeds div:not(:last-child):before{ 
+            left: auto;
+        }
+
+        #Feeds div{
+            justify-content: center;
+        }
+           
+        #Feeds div p:nth-child(2){
+            width: 100%;
+            margin-bottom: 0;
+        }
+    }
+
 </style>
+
