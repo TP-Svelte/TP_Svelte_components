@@ -55,7 +55,7 @@
         }
         .carousel-container{
             margin-top: 2em;
-            width: 100vw;
+            /* width: 100vw; */
             overflow-x: hidden; 
             max-width: 100vw;
         }
