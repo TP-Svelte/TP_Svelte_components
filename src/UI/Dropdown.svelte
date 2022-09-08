@@ -92,7 +92,6 @@
     margin-bottom: auto;
     color: #9F9F9F;
     margin-right: 35px;
-    font-weight: 700;
   }
   #ellipse_btn {
     width: 40px;
