@@ -25,6 +25,7 @@ $: filteredList = persons.filter(item => item.name.indexOf(search) !== -1);
 .container {
     margin: 2em;
     width: 20vw;
+    max-width: 20vw;
     background-color: #F2F2F2;
     padding: 2em;
     border-radius: 24px;
